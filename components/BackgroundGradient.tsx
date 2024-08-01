@@ -9,6 +9,7 @@ import {
   ArrowTopLeftIcon,
   ArrowTopRightIcon,
 } from "./Icons";
+import { motion } from "framer-motion";
 
 const DIRECTIONS = [
   { title: "to top", icon: <ArrowTopIcon /> },
@@ -79,9 +80,9 @@ const BackgroundGradient: React.FC = () => {
   return (
     <>
       <div className="flex h-screen w-full items-center justify-center">
-        <div className="rounded-full bg-black px-6 py-3">
+        <motion.div layout className="rounded-full bg-black px-6 py-3">
           <code className="shrink-0 text-xs">{tailwindCode}</code>
-        </div>
+        </motion.div>
       </div>
 
       <div className="fixed bottom-12 z-10 flex w-full justify-center">
