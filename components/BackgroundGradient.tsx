@@ -64,7 +64,7 @@ const generateTailwindCSS = (
 const BackgroundGradient: React.FC = () => {
   const [color1, setColor1] = useState<string>("#000000");
   const [color2, setColor2] = useState<string>("#90a49e");
-  const [direction, setDirection] = useState<string>("to top");
+  const [direction, setDirection] = useState<string>("to bottom");
   const [cssCode, setCssCode] = useState<string>("");
   const [tailwindCode, setTailwindCode] = useState<string>("");
   const [alert, setAlert] = useState<{
@@ -104,7 +104,10 @@ const BackgroundGradient: React.FC = () => {
   return (
     <>
       <div className="flex h-screen w-full items-center justify-center">
-        <motion.div layout className="m-4 rounded-lg border border-current">
+        <motion.div
+          layout
+          className="m-auto max-w-sm rounded-lg border border-current"
+        >
           <header className="flex w-full items-center justify-between px-4 py-3">
             <h1 className="text-sm">Tailwind CSS Code</h1>
             {alert ? (
@@ -125,7 +128,7 @@ const BackgroundGradient: React.FC = () => {
         </motion.div>
       </div>
 
-      <div className="fixed bottom-12 z-10 flex w-full justify-center">
+      <div className="fixed bottom-6 z-10 flex w-full justify-center">
         <div className="mr-px grid grid-cols-1">
           <label id="color 1">
             <input
