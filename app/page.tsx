@@ -1,13 +1,12 @@
 "use client";
 
 import BackgroundGradient from "@/components/BackgroundGradient";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <main>
-      <header className="fixed top-20 z-10 flex w-full items-center justify-center">
-        <h1>UI Gradient</h1>
-      </header>
+      <Header />
       <BackgroundGradient />
     </main>
   );

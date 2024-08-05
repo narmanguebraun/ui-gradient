@@ -58,26 +58,21 @@ const generateTailwindCSS = (
     default:
       directionClass = "bg-gradient-to-r";
   }
-  return `${directionClass} from-[${color1}] to-[${color2}]`;
+  return `${directionClass} from-[${color1}] to-[${color2}] bg-clip-text text-transparent`;
 };
 
-const BackgroundGradient: React.FC = () => {
-  const [color1, setColor1] = useState<string>("#000000");
-  const [color2, setColor2] = useState<string>("#90a49e");
+const TextGradientGenerator: React.FC = () => {
+  const [text, setText] = useState<string>(
+    "We lose—because we win Gamblers—recollecting which Toss their dice again!",
+  );
+  const [color1, setColor1] = useState<string>("#3b3d5e");
+  const [color2, setColor2] = useState<string>("#7299ac");
   const [direction, setDirection] = useState<string>("to bottom");
-  const [cssCode, setCssCode] = useState<string>("");
   const [tailwindCode, setTailwindCode] = useState<string>("");
   const [alert, setAlert] = useState<{
     type: "success" | "error" | "warning" | "info";
     message: string;
   } | null>(null);
-
-  const applyGradient = () => {
-    const gradient = `linear-gradient(${direction}, ${color1}, ${color2})`;
-    document.body.style.background = gradient;
-    setCssCode(`background: ${gradient};`);
-    setTailwindCode(generateTailwindCSS(direction, color1, color2));
-  };
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text).then(
@@ -98,34 +93,47 @@ const BackgroundGradient: React.FC = () => {
   };
 
   useEffect(() => {
-    applyGradient();
+    setTailwindCode(generateTailwindCSS(direction, color1, color2));
   }, [color1, color2, direction]);
 
   return (
     <>
-      <div className="flex h-screen w-full items-center justify-center">
-        <motion.div
-          layout
-          className="m-auto max-w-sm rounded-lg border border-current"
-        >
-          <header className="flex w-full items-center justify-between px-4 py-3">
-            <h1 className="text-sm">Tailwind CSS Code</h1>
-            {alert ? (
-              <AlertIcon type={alert.type} />
-            ) : (
-              <button
-                title="Copy Tailwind CSS Code"
-                onClick={() => copyToClipboard(tailwindCode)}
-                className="text-white hover:text-rose-500"
-              >
-                <CopyIcon />
-              </button>
-            )}
-          </header>
-          <div className="flex shrink-0 grow-0 basis-auto items-center gap-4 overflow-auto rounded-b-lg bg-black p-4">
-            <code className="shrink-0 text-xs">{tailwindCode}</code>
+      <div className="flex h-screen w-full items-center justify-center bg-[#121212]">
+        <div className="mx-4 max-w-md">
+          <div className="mb-12 flex justify-center">
+            <span
+              className={`bg-clip-text text-center text-4xl font-bold -tracking-widest text-transparent`}
+              style={{
+                backgroundImage: `linear-gradient(${direction}, ${color1}, ${color2})`,
+              }}
+            >
+              {text}
+            </span>
           </div>
-        </motion.div>
+
+          <motion.div
+            layout
+            className="m-auto max-w-sm rounded-lg border border-current"
+          >
+            <header className="flex w-full items-center justify-between px-4 py-3">
+              <h1 className="text-sm">Tailwind CSS Code</h1>
+              {alert ? (
+                <AlertIcon type={alert.type} />
+              ) : (
+                <button
+                  title="Copy Tailwind CSS Code"
+                  onClick={() => copyToClipboard(tailwindCode)}
+                  className="text-white hover:text-rose-500"
+                >
+                  <CopyIcon />
+                </button>
+              )}
+            </header>
+            <div className="flex shrink-0 grow-0 basis-auto items-center gap-4 overflow-auto rounded-b-lg bg-black p-4">
+              <code className="shrink-0 text-xs">{tailwindCode}</code>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       <div className="fixed bottom-6 z-10 flex w-full justify-center">
@@ -174,4 +182,4 @@ const BackgroundGradient: React.FC = () => {
   );
 };
 
-export default BackgroundGradient;
+export default TextGradientGenerator;
