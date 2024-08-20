@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { BackgroundIcon, GitHubIcon, TextIcon, TwitterIcon } from "./Icons";
+import {
+  BackgroundIcon,
+  GitHubIcon,
+  TextIcon,
+  TwitterIcon,
+} from "@/components/Icons";
 
 export default function Header() {
   return (

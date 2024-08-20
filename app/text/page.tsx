@@ -1,13 +1,11 @@
 "use client";
 
-import TextGradient from "@/components/TextGradient";
-import Header from "@/components/Header";
+import TextGradientGenerator from "@/components/TextGradientGenerator";
 
 export default function Text() {
   return (
     <main>
-      <Header />
-      <TextGradient />
+      <TextGradientGenerator />
     </main>
   );
 }
