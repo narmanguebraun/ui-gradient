@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from "react";
 
-import useClipboard from "@/hooks/useClipboard";
-
-import TailwindCodeDisplay from "@/components/TailwindCodeDisplay";
+import AlertNotification from "@/components/AlertNotification";
 import ColorPicker from "@/components/ColorPicker";
 import { DIRECTIONS } from "@/components//Directions";
 import DirectionButton from "@/components//DirectionButton";
 import generateTailwindCSS from "@/utils/generateTailwindCSS";
-import AlertNotification from "@/components/AlertNotification";
+import TailwindCodeDisplay from "@/components/TailwindCodeDisplay";
+import useClipboard from "@/hooks/useClipboard";
 
-const INITIAL_BG_COLOR1 = "#000000";
-const INITIAL_BG_COLOR2 = "#90a49e";
-const INITIAL_BG_DIRECTION = "to bottom";
+const INITIAL_BG_STATE = {
+  color1: "#000000",
+  color2: "#90a49e",
+  direction: "to bottom",
+};
 
 const BackgroundGradientGenerator: React.FC = () => {
-  const [color1, setColor1] = useState<string>(INITIAL_BG_COLOR1);
-  const [color2, setColor2] = useState<string>(INITIAL_BG_COLOR2);
-  const [direction, setDirection] = useState<string>(INITIAL_BG_DIRECTION);
+  const [color1, setColor1] = useState<string>(INITIAL_BG_STATE.color1);
+  const [color2, setColor2] = useState<string>(INITIAL_BG_STATE.color2);
+  const [direction, setDirection] = useState<string>(
+    INITIAL_BG_STATE.direction,
+  );
   const { alert, copyToClipboard } = useClipboard();
   const [cssCode, setCssCode] = useState<string>("");
   const [tailwindCode, setTailwindCode] = useState<string>("");

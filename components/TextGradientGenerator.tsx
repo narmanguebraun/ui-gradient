@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
 
-import useClipboard from "@/hooks/useClipboard";
-import GradientText from "@/components/GradientText";
-import TailwindCodeDisplay from "@/components/TailwindCodeDisplay";
+import AlertNotification from "@/components/AlertNotification";
 import ColorPicker from "@/components/ColorPicker";
+import { DIRECTIONS } from "@/components/Directions";
 import DirectionButton from "@/components/DirectionButton";
 import generateTailwindCSS from "@/utils/generateTailwindCSS";
-import AlertNotification from "@/components/AlertNotification";
+import GradientText from "@/components/GradientText";
+import TailwindCodeDisplay from "@/components/TailwindCodeDisplay";
+import useClipboard from "@/hooks/useClipboard";
 
-import { DIRECTIONS } from "@/components/Directions";
-
-const INITIAL_TEXT =
-  "We lose—because we win Gamblers—recollecting which Toss their dice again!";
-
-const INITIAL_COLOR1 = "#3b3d5e";
-const INITIAL_COLOR2 = "#7299ac";
-const INITIAL_DIRECTION = "to bottom";
+const INITIAL_STATE = {
+  text: "We lose—because we win Gamblers—recollecting which Toss their dice again!",
+  color1: "#3b3d5e",
+  color2: "#7299ac",
+  direction: "to bottom",
+};
 
 const TextGradientGenerator: React.FC = () => {
-  const [text, setText] = useState<string>(INITIAL_TEXT);
-  const [color1, setColor1] = useState<string>(INITIAL_COLOR1);
-  const [color2, setColor2] = useState<string>(INITIAL_COLOR2);
-  const [direction, setDirection] = useState<string>(INITIAL_DIRECTION);
+  const [text, setText] = useState<string>(INITIAL_STATE.text);
+  const [color1, setColor1] = useState<string>(INITIAL_STATE.color1);
+  const [color2, setColor2] = useState<string>(INITIAL_STATE.color2);
+  const [direction, setDirection] = useState<string>(INITIAL_STATE.direction);
   const { alert, copyToClipboard } = useClipboard();
   const [tailwindCode, setTailwindCode] = useState<string>("");
 
