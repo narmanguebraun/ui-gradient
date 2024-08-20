@@ -1,13 +1,13 @@
 "use client";
 
-import BackgroundGradient from "@/components/BackgroundGradient";
+import BackgroundGradientGenerator from "@/components/BackgroundGradientGenerator";
 import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <main>
       <Header />
-      <BackgroundGradient />
+      <BackgroundGradientGenerator />
     </main>
   );
 }
