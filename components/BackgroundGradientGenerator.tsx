@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import AlertNotification from "@/components/AlertNotification";
 import ColorPicker from "@/components/ColorPicker";
 import { DIRECTIONS } from "@/components//Directions";
-import DirectionButton from "@/components//DirectionButton";
+import DirectionButton from "@/components/DirectionButton";
 import generateTailwindCSS from "@/utils/generateTailwindCSS";
 import TailwindCodeDisplay from "@/components/TailwindCodeDisplay";
 import useClipboard from "@/hooks/useClipboard";
