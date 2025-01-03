@@ -9,7 +9,7 @@ export default function AlertNotification({ type, message }: AlertProps) {
   return (
     <div
       role="alert"
-      className={`fixed right-2 top-2 z-20 flex items-center gap-2 rounded-lg border bg-black px-4 py-3 font-mono text-xs ${alertStyles[type]}`}
+      className={`fixed left-0 top-0 z-20 flex w-full items-center gap-2 bg-black p-4 font-mono text-xs ${alertStyles[type]}`}
     >
       {alertIcons[type]} {message}
     </div>
