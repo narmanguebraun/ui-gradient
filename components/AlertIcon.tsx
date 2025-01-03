@@ -10,7 +10,7 @@ import {
 export type AlertType = "success" | "error" | "warning" | "info";
 
 export const alertStyles = {
-  success: "text-teal-500",
+  success: "text-teal-500 border-teal-500",
   error: "text-red-500",
   warning: "text-yellow-500",
   info: "text-blue-500",
@@ -23,11 +23,11 @@ export const alertIcons: Record<AlertType, ReactElement> = {
   info: <InfoIcon />,
 };
 
-export interface AlertIconProps {
+type AlertIconProps = {
   type: AlertType;
-}
+};
 
-const AlertIcon: React.FC<AlertIconProps> = ({ type }) => {
+export default function AlertIcon({ type }: AlertIconProps) {
   return (
     <div
       role="alert"
@@ -36,6 +36,4 @@ const AlertIcon: React.FC<AlertIconProps> = ({ type }) => {
       {alertIcons[type]}
     </div>
   );
-};
-
-export default AlertIcon;
+}
