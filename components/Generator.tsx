@@ -1,7 +1,5 @@
-"use client";
-
 import ColorPicker from "./ColorPicker";
-import DirectionButton, { DirectionButtonProps } from "./DirectionButton";
+import DirectionButton, { type DirectionButtonProps } from "./DirectionButton";
 import { DIRECTIONS } from "./Directions";
 
 type GeneratorProps = {
@@ -12,6 +10,7 @@ type GeneratorProps = {
   onChangeColor2: (color: string) => void;
   onClickDirection: (btn: DirectionButtonProps["title"]) => void;
 };
+
 export default function Generator({
   color1,
   color2,

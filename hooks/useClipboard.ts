@@ -1,11 +1,10 @@
+import { AlertType } from "@/components/AlertIcon";
 import { useState } from "react";
 
-type AlertType = "success" | "error" | "warning" | "info";
-
-interface AlertState {
+type AlertState = {
   type: AlertType;
   message: string;
-}
+};
 
 const useClipboard = () => {
   const [alert, setAlert] = useState<AlertState | null>(null);
