@@ -7,19 +7,12 @@ import CodeDisplay from "./CodeDisplay";
 import useClipboard from "@/hooks/useClipboard";
 import Generator from "./Generator";
 import Header from "./Header";
-
-const INITIAL_BG_STATE = {
-  color1: "#121212",
-  color2: "#90a49e",
-  direction: "to bottom",
-};
+import { INITIAL_STATE } from "./GradientText";
 
 export default function GradientBackground() {
-  const [color1, setColor1] = useState<string>(INITIAL_BG_STATE.color1);
-  const [color2, setColor2] = useState<string>(INITIAL_BG_STATE.color2);
-  const [direction, setDirection] = useState<string>(
-    INITIAL_BG_STATE.direction,
-  );
+  const [color1, setColor1] = useState<string>(INITIAL_STATE.color1);
+  const [color2, setColor2] = useState<string>(INITIAL_STATE.color2);
+  const [direction, setDirection] = useState<string>(INITIAL_STATE.direction);
   const { alert, copyToClipboard } = useClipboard();
   const [cssCode, setCssCode] = useState<string>("");
   const [tailwindCode, setTailwindCode] = useState<string>("");

@@ -8,10 +8,10 @@ import useClipboard from "@/hooks/useClipboard";
 import Generator from "./Generator";
 import Header from "./Header";
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   text: "We lose—because we win Gamblers—recollecting which Toss their dice again!",
-  color1: "#5b47f0",
-  color2: "#fb045a",
+  color1: "#404f45",
+  color2: "#121212",
   direction: "to bottom",
 };
 
@@ -29,7 +29,7 @@ export default function GradientText() {
 
   return (
     <>
-      <div className="flex min-h-screen w-full flex-col items-center justify-between bg-[#121212]">
+      <div className="flex min-h-screen w-full flex-col items-center justify-between bg-[#090909]">
         <Header />
         <main className="mx-4 max-w-md">
           <div className="mb-6 flex justify-center">

@@ -10,7 +10,7 @@ import {
 export type AlertType = "success" | "error" | "warning" | "info";
 
 export const alertStyles = {
-  success: "text-teal-500 border-teal-500",
+  success: "text-teal-500",
   error: "text-red-500",
   warning: "text-yellow-500",
   info: "text-blue-500",
