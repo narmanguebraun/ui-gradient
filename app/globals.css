@@ -9,4 +9,10 @@
   a {
     @apply hover:text-rose-500;
   }
+  :-moz-selection {
+    @apply bg-rose-500 text-white;
+  }
+  ::selection {
+    @apply bg-rose-500 text-white;
+  }
 }
