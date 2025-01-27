@@ -10,8 +10,8 @@ import Header from "./Header";
 
 export const INITIAL_STATE = {
   text: "We lose—because we win Gamblers—recollecting which Toss their dice again!",
-  color1: "#404f45",
-  color2: "#121212",
+  color1: "#87a190",
+  color2: "#1f1d34",
   direction: "to bottom",
 };
 
