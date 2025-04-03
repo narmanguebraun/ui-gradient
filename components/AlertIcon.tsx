@@ -16,7 +16,7 @@ export const alertStyles = {
   info: "text-blue-500",
 };
 
-export const alertIcons: Record<AlertType, ReactElement> = {
+export const alertIcons: Record<AlertType, ReactElement<any>> = {
   success: <CheckIcon />,
   error: <ErrorIcon />,
   warning: <WarningIcon />,

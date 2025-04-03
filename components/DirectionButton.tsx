@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 export type DirectionButtonProps = {
   title: string;
-  icon: ReactElement;
+  icon: ReactElement<any>;
   selected: boolean;
   onClick: () => void;
 };
